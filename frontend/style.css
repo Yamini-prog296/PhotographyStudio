@@ -79,3 +79,37 @@ footer{
     padding:20px;
     margin-top:30px;
 }
+/* Gallery */
+
+#gallery{
+    padding:60px 10%;
+    background:#f8f8f8;
+    text-align:center;
+}
+
+.gallery-text{
+    margin-bottom:30px;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.photo{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.photo img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.photo h3{
+    padding:15px;
+}
