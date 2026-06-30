@@ -19,6 +19,38 @@ mongoose.connect(process.env.MONGO_URI)
     console.error(err);
     console.error(err.message);
   });
+  const bookingSchema = new mongoose.Schema({
+
+    name: String,
+    email: String,
+    phone: String,
+    date: String
+
+});
+
+const Booking = mongoose.model("Booking", bookingSchema);
+
+app.post("/api/booking", async (req, res) => {
+
+    try {
+
+        const booking = new Booking(req.body);
+
+        await booking.save();
+
+        res.json({
+            message: "🎉 Booking Saved Successfully!"
+        });
+
+    } catch (err) {
+
+        res.status(500).json({
+            message: "Failed to save booking"
+        });
+
+    }
+
+});
 
 const PORT = process.env.PORT || 5000;
 
