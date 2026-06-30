@@ -1,7 +1,4 @@
-document.querySelector("form").addEventListener("submit", function(event) {
-    event.preventDefault();
-    alert("🎉 Booking Submitted Successfully!");
-});
+
 document.getElementById("bookingForm").addEventListener("submit", async function(event) {
 
     event.preventDefault();
